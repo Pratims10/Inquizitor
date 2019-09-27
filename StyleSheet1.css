@@ -1,0 +1,178 @@
+﻿span,
+input {
+	
+	border:groove solid rgba(255,255,255,.5);
+	font-size:small
+	padding:.5em .5em .3125em;
+	color:black
+	border-radius:.5em;
+	background:transparent;
+	transition:all .600s;
+	
+	/*&:focus{
+		outline:none;
+		color:rgba(255,255,255,.75);
+		border-color:rgba(255,255,255,.75);
+	}
+	
+	&.keyup {
+		color:white;
+		border-color:white;
+		text-shadow:0 0 .125em white;
+		box-shadow:0 0 .25em white,inset 0 0 .25em white;
+	}*/
+}
+
+code
+        {
+    max-width:450px;
+    max-height:300px;
+    min-width:350px;
+    padding-left:16px;
+    padding-top:10px;
+    width:inherit;
+            overflow:auto;
+            display: block;
+            color: #393318;
+            background-color:#eff0f1;
+        }
+canvas {
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	pointer-events:none;
+}
+
+input {
+	font-family: "Arial Rounded MT Bold","Helvetica Rounded",Arial,sans-serif;
+}
+
+$placeholder-color:rgba(255,255,255,.5);
+
+::-webkit-input-placeholder {
+	color:$placeholder-color;
+	text-shadow:0 0 .125em transparent;
+	transition:all .25s;
+}
+input:focus::-webkit-input-placeholder {
+	opacity:.5;
+}
+
+::-moz-placeholder {
+	color:$placeholder-color;
+	text-shadow:0 0 .125em transparent;
+	transition:all .25s;
+}
+input:focus::-moz-placeholder {
+	opacity:.5;
+}
+
+:-ms-input-placeholder {
+	color:$placeholder-color;
+	text-shadow:0 0 .125em transparent;
+	transition:all .25s;
+}
+input:focus:-ms-input-placeholder {
+	opacity:.5;
+}
+
+html,body {
+	/*height:1305px;
+	overflow:hidden;*/
+}
+
+html {
+    background-color:azure;
+	background: no-repeat center fixed;
+	background-size:cover;
+}
+
+body {
+    background-color:azure;
+	/*box-shadow:inset 0 0 5em #000;
+
+        
+    margin-left: 0px;
+    margin-top: 3px;
+    /*width: 3754px;*/
+    margin-right: 0px;
+ /*   background:url(images/istockphoto-912872748-1024x1024.jpg) repeat;*/
+    text-align: left;
+}
+txtfirstname:focus {
+  border: 3px solid #555;
+}
+input[type=text]:focus{
+    border:3px solid #4CAF50;
+}
+input {
+    background-color:azure;
+	box-sizing:content-box;
+    font-size:small;
+	bottom: 12.4em;
+	left:448px;
+	margin-left:2.2em;
+    margin-top: 6px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+.btnregister{
+    border-radius:5px;
+    background-color:#eee2e2;
+}
+.btnregister2{
+    background-color:#141ee4;
+    border-radius:5px;
+    cursor:pointer;color:white;
+}
+.btnregister2{
+    background-color:#141ee4;
+    border-radius:5px;
+    color:white;
+}
+.btnregister:hover,.btnregister2:hover {
+  background-color: #2511a4; /* Green */
+  color:white;
+  border-radius:10px;
+  
+
+  
+}
+  /*background: #2079b0;
+
+  background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
+  background-image: -moz-linear-gradient(top, #2079b0, #eb94d0);
+  background-image: -ms-linear-gradient(top, #2079b0, #eb94d0);
+  background-image: -o-linear-gradient(top, #2079b0, #eb94d0);
+  background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
+
+  text-decoration:dotted;
+  transition-duration:15s;
+  transition-delay:1s;*/
+.w3-black,.w3-hover-black:hover{color:#fff!important;background-color:#000!important;
+    width: 133px;
+    transition:transform 0.5s;
+}
+.w3-dropdown-click,.w3-dropdown-hover{position:relative;display:inline-block;cursor:pointer;background-color:white;border-color:white;transition:0.5s;-webkit-transition: 0.6s ease-out;
+    -moz-transition:  0.6s ease-out;
+    transition:  0.6s ease-out;}
+.w3-dropdown-hover:hover .w3-dropdown-content{display:block;transition:0.5s;-webkit-transition: 0.6s ease-out;
+    -moz-transition:  0.6s ease-out;
+    transition:  0.6s ease-out;}
+.w3-dropdown-hover:first-child,.w3-dropdown-click:hover{background-color:#ccc;color:#000;
+    top: 0px;
+    left: 0px;
+    width: 181px;
+    transition: 0.5s;
+    -webkit-transition: 0.6s ease-out;
+    -moz-transition:  0.6s ease-out;
+    transition:  0.6s ease-out;
+}
+.w3-dropdown-hover:hover > .w3-button:first-child,.w3-dropdown-click:hover > .w3-button:first-child{background-color:white;color:black;transition:0.5s;-webkit-transition: 0.6s ease-out;
+    -moz-transition:  0.6s ease-out;
+    transition:  0.6s ease-out;}
+.w3-dropdown-content{cursor:auto;color:#000;background-color:white;display:none;position:absolute;min-width:160px;margin:0;padding:0;z-index:1;transition:0.5s;-webkit-transition: 0.6s ease-out;
+    -moz-transition:  0.6s ease-out;
+    transition:  0.6s ease-out;}

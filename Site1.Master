@@ -1,0 +1,275 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication3.Site1" %>
+
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit" %>
+
+<!DOCTYPE html>
+<link href="StyleSheet1.css" rel="stylesheet" />
+<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <script src="Scripts/ckeditor/ckeditor.js"></script>
+<head runat="server">
+    <title></title><asp:ContentPlaceHolder ID="head" runat="server">
+     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        a{
+            text-decoration:none;
+        }
+        body
+            {
+                background:url(images/back.png) no-repeat center fixed;
+               background-color:#fafafa;
+                background-size:cover;
+                margin-left:0px;
+                margin-top:0px;
+                margin-bottom:0px;
+                margin:0px 0px 0px 0px;
+            }
+        /* Add a black background color to the top navigation bar */
+.topnav {
+  background-color: #81949d;
+}
+.sidebar
+{
+    z-index:10;
+    position:fixed;
+    float:left;
+    width:14%;
+    margin-top:-6%;
+    padding:10px;
+    height:90%;
+    background-color:white;
+	overflow:scroll;
+}
+.ht
+{
+    margin-top:-10%;
+}
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+  background-color: #19006d;
+  color: black;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+    margin-left:66%;
+  padding: 6px;
+  width:350px;
+  border:double;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 13.5px;
+  text-decoration-color:black;
+}
+        
+       /* nav.black,Label1,Lab1l2
+        {
+            background:rgba(0,0,0,1);
+            opacity:0.6;
+            transition-duration:1s;
+            height:70px;
+            text-decoration-color:black;
+        }
+        */
+
+        body, html {
+    height: 100%;
+    text-align: center;
+    font-size:13.5px;
+}
+
+body {
+  background-color: #242F3F;
+}
+
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position:fixed;
+  border: 4px solid #Fff;
+  top: 50%;
+  animation: loader 2s infinite ease;
+  
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  25% {
+    transform: rotate(180deg);
+  }
+  
+  50% {
+    transform: rotate(180deg);
+  }
+  
+  75% {
+    transform: rotate(360deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  
+  25% {
+    height: 0%;
+  }
+  
+  50% {
+    height: 100%;
+  }
+  
+  75% {
+    height: 100%;
+  }
+  
+  100% {
+    height: 0%;
+  }
+}
+.loader-wrapper
+{
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    background-color:#242f3f;
+    
+    justify-content:center;
+    align-items:center;
+}
+
+        </style>
+   <script src="https://code.jquery.com/jquery-3.2.1.js" type="text/javascript"></script>
+        $(window).on('scroll', function () {
+            if ($(window).scroll()) {
+                $('sidebar').addClass('ht');
+            }
+            else {
+                $('sidebar').removeClass('ht');
+            }
+        });
+        $(window).on("load", function () {
+            $(".loader-wrapper").fadeOut("slow");
+            });
+     //   var preloader=document.getElementById("form1");
+     //   window.addEventListener('load',function()
+     //   {
+     //       preloader.style.display=none;
+     //   });
+</head>
+     
+<body style="height:100%" id="loading" onload="myfunc()">
+       
+    <form id="form1" runat="server" method="post" style="height:100%">
+        <nav style=" color:black; top:0; ">
+        <div style="background-color:#fafafa;box-shadow:rgba(0,0,0,0.6) 0 1px 8px; height:11.5%; width: 100%; z-index:5;position:relative;top:0; left: 0px;position:fixed">
+            <table style="width:100%;">
+                <tr>
+                    <td style="text-align:left;width:15%">
+                     
+                        <a href="e-discuss.aspx"><img src="images/inquizitor.jpg" alt="Inquiitor.jpg" style="margin-top: 2px;width:60%;height:74px"/></a>
+                        </td><td style="width:50%">
+             <strong><span >&nbsp;&nbsp;&nbsp; 
+                 <asp:TextBox style="margin-left:5%;border-radius:8px"  ID="TextBox1" runat="server" Height="25px" Width="38%" AutoCompleteType="Search" ></asp:TextBox>
+                        
+                <asp:Button ID="btnsearch" runat="server" CssClass="btnregister2" style="margin-left:5%;height:23px;width:12%" Text="Search" OnClick="btnsearch_click" />
+            <ajaxToolkit:AutoCompleteExtender ID="TextBox1_AutoCompleteExtender" runat="server" BehaviorID="TextBox1_AutoCompleteExtender" DelimiterCharacters=""  TargetControlID="TextBox1" CompletionInterval="1" MinimumPrefixLength="1" ServiceMethod="getlist">
+            </ajaxToolkit:AutoCompleteExtender>
+                        </span></strong></td>
+                    <td style="width:15%;" >
+                        <div class="w3-container">
+  <div class="w3-dropdown-hover" style="color:black;width:130px;">
+      <center>
+    <button class="w3-button w3-black" type="reset" style="background-color:white;color:white;width:130px;">See Notifications</button>
+    <div class="w3-dropdown-content w3-bar-block w3-border" style="margin-left:-50px;width:250px;">
+        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+        </div>
+          </center>
+  </div>
+</div>
+
+                    </td>
+            <td style="width:86px;">
+                <asp:Label ID="Label1" runat="server" ForeColor="Black" CssClass="anchor"></asp:Label>
+                 <!--   <asp:Label ID="Label5" runat="server"   Height="18px" Font-Size="Medium"></asp:Label>-->
+            
+                </td>
+                    <td style="width:86px;" >
+                        <asp:Label ID="Label2" runat="server" ForeColor="Black" CssClass="anchor"></asp:Label>
+            <!--<asp:Label ID="Label6" runat="server" Font-Size="Medium" Height="18px" ></asp:Label>-->
+            </td>
+                    <td>
+
+                    </td>
+           </tr>
+                </table>
+</div> 
+            </nav>
+   <!-- <div>
+        <center>
+        <div class="loader-wrapper">
+            <span class="loader"><span class="loader-inner"></span></span>
+        </div>
+            </center>
+        </div>-->
+  
+           <div class="sidebar" >
+               <p style="font-family:''; font-size:36px";>Tags</p>
+               <asp:Label ID="Label4" runat="server"></asp:Label>
+           </div>
+       
+            <asp:ContentPlaceHolder  ID="ContentPlaceHolder1" runat="server" >
+               
+        </asp:ContentPlaceHolder>
+       
+       <asp:ContentPlaceHolder ID="Spaces" runat="server">
+
+        </asp:ContentPlaceHolder>
+        
+    
+        <div style="background-color:#020021; text-decoration-color:black;position:static;margin-left:12%">
+            
+            <div>
+            <asp:ScriptManager ID="scriptmanager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
+           <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <asp:Label ID="Timerlabel" runat="server" style="margin-left:80%" ForeColor="White" Text="Current Time:"></asp:Label>
+                    
+                    <asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick"></asp:Timer>
+
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            </div>
+            <p style="width:88%; color:white; margin-left:7%; bottom:0px;text-align:center" >
+               
+            This is a project created by Second year fourth semester students of Kalyani Government Engineering College -Pratim Sarkar and Anirban Das.
+            This is a purely an educational discussion forum by the students, for the students. The aim is to create an environment whereby individuals will ask questions and others who know the proper answer will respond.
+            Please note that any misuse of language or use of harsh words is not appreciated.
+            Come, join and be a part of the community that will be helpful for you in various ways.
+            </p>
+            <p style="color:white; margin-left:85%">Thank You :)
+            </p>
+        </div>
+    </form>
+</body>
+</html>
